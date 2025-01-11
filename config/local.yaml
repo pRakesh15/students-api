@@ -1,0 +1,7 @@
+env: "dev"
+storage_path: "storage/storage.db"
+http_server:
+  address: "localhost:8989"
+
+
+//we can do all the  above things in .env also
