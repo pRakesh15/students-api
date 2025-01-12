@@ -20,9 +20,10 @@ type Config struct {
 	HTTPServer  `yaml:"http_server"`
 }
 
-//create a function for checking u the config files
+//create a function for checking u the config files by yaml file
 
 func MustLoad() *Config {
+
 	var configPath string
 	//using this to get the env path..
 	configPath = os.Getenv("CONFIG_PATH")
@@ -65,3 +66,33 @@ func MustLoad() *Config {
 	return &cfg
 
 }
+
+// type ConfigEnv struct {
+// 	// Add default values and environment variable mappings
+// 	Env         string `env:"ENV" env-default:"Production" env-required:"true"`
+// 	StoragePath string `env:"STORAGE_PATH" env-default:"storage/storage.db" env-required:"true"`
+// 	Address     string `env:"PORT" env-default:"8080" env-required:"true"`
+// }
+
+// //function for read the variables from .env
+
+// func MustLoad() *ConfigEnv {
+// 	err := godotenv.Load()
+// 	if err != nil {
+// 		log.Fatalf("Error loading .env file: %s", err.Error())
+// 	}
+
+// 	// Map environment variables to the Config struct
+// 	var cfg ConfigEnv
+// 	cfg.Env = os.Getenv("ENV")
+// 	cfg.StoragePath = os.Getenv("STORAGE_PATH")
+// 	cfg.Address = os.Getenv("PORT")
+
+// 	// Validate required fields
+// 	if cfg.Env == "" || cfg.StoragePath == "" || cfg.Address == "" {
+// 		log.Fatal("Missing required environment variables: APP_NAME, PORT, or ENV")
+// 	}
+
+// 	// Return the populated config
+// 	return &cfg
+// }
