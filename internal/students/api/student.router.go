@@ -12,7 +12,7 @@ func SetupRouter() *mux.Router {
 	apiRouter := router.PathPrefix("/api/v1").Subrouter()
 
 	// Student routs routes
-	apiRouter.HandleFunc("/students", handler.CreateUser).Methods("GET")
+	apiRouter.HandleFunc("/students", handler.CreateUser).Methods("POST")
 
 	return router
 }

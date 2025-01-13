@@ -11,7 +11,7 @@ import (
 	"syscall"
 	"time"
 
-	student_router "github.com/pRakesh15/student-api/internal/students"
+	student_router "github.com/pRakesh15/student-api/internal/students/api"
 	"github.com/pRakesh15/student-api/pkg/config"
 )
 
