@@ -12,7 +12,7 @@ type HTTPServer struct {
 	Address string `yaml:"address" env:"address" env-required:"true"`
 }
 
-//create a config structure  for store the config data...
+//create a config structure  for store the config data...             
 
 type Config struct {
 	Env         string `yaml:"env" env:"ENV" env-required:"true"`

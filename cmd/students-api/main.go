@@ -11,6 +11,7 @@ import (
 	"syscall"
 	"time"
 
+	student_router "github.com/pRakesh15/student-api/internal/students"
 	"github.com/pRakesh15/student-api/pkg/config"
 )
 
@@ -23,12 +24,13 @@ func main() {
 
 	//set routs
 	//this is helps us to create routers...
-	router := http.NewServeMux()
-	//use the router with functions
-	//in future we write the functions in another folder or another package...
-	router.HandleFunc("GET /api/v1/", func(res http.ResponseWriter, req *http.Request) {
-		res.Write([]byte("JAy Shree RAM"))
-	})
+	//here we call the router function from student router...
+	router := student_router.SetupRouter()
+	// //use the router with functions
+	// //in future we write the functions in another folder or another package...
+	// router.HandleFunc("GET /api/v1/", func(res http.ResponseWriter, req *http.Request) {
+	// 	res.Write([]byte("JAy Shree RAM"))
+	// })
 
 	//start server
 	//start the server by using the config files....
